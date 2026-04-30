@@ -2,6 +2,7 @@
   import {
     Section,
     Grid,
+    Image,
   } from "$components";
   import { onMount, onDestroy } from "svelte";
   import { createPageTextStore } from "$lib";
@@ -67,9 +68,13 @@
       />
     </picture>
   </div>
-  <div class="relative flex justify-center items-center flex-row w-full h-[42vh] z-10">
-    <img src={helpdesk} alt={$text["hero"]?.title || "Helpdesk logo"} />
-  </div>
+  <Image
+    src={helpdeskbg}
+    webpSrcSet={helpdeskbgWebpSet}
+    alt="Helpdesk"
+    objectFit="cover"
+    class="relative flex justify-center items-center flex-row w-full h-[42vh] z-10"
+  />
 </Section>
 
 <!-- Main Content -->
