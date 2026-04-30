@@ -57,24 +57,30 @@
 
 <div class="safe-area-navbar">
 <!-- Hero Section -->
+
 <Section class="relative bg-gray-900 min-h-[42vh] overflow-hidden" padding="none" fullWidth={true}>
-  <div class="absolute inset-0 left-1/2 w-screen -translate-x-1/2 h-[42vh]" aria-hidden="true">
-    <picture>
-      <source srcset={helpdeskbgWebpSet} type="image/webp" />
-      <img
-        class="h-full w-full object-cover object-left opacity-50 blur-[1.5px]"
-        src={helpdeskbg}
-        alt="Helpdesk"
-      />
-    </picture>
+  <!-- Background image -->
+  <div class="absolute inset-0 left-1/2 w-screen -translate-x-1/2 h-[42vh] z-0" aria-hidden="true">
+    <Image
+      src={helpdeskbg}
+      webpSrcSet={helpdeskbgWebpSet}
+      alt="Helpdesk background"
+      objectFit="cover"
+      class="h-full w-full object-left opacity-50 blur-[1.5px]"
+      pictureClass="h-full w-full"
+    />
   </div>
-  <Image
-    src={helpdeskbg}
-    webpSrcSet={helpdeskbgWebpSet}
-    alt="Helpdesk"
-    objectFit="cover"
-    class="relative flex justify-center items-center flex-row w-full h-[42vh] z-10"
-  />
+  <!-- Overlay -->
+  <div class="absolute inset-0 w-full h-full bg-black/60 z-10 pointer-events-none"></div>
+  <!-- Logo -->
+  <div class="relative z-20 flex justify-center items-center h-[42vh]">
+    <Image
+      src={helpdesk}
+      alt="Helpdesk logo"
+      objectFit="contain"
+      class="max-h-40 w-auto drop-shadow-xl"
+    />
+  </div>
 </Section>
 
 <!-- Main Content -->
