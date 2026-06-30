@@ -105,24 +105,24 @@
       <!-- Pricing Table -->
       <div class="flex flex-col">
         <h2 class="text-4xl font-light pb-4">{$text["pricing"]?.title || ""}</h2>
-        <div class="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-          <table class="w-full text-lg">
-            <thead class="bg-gray-50">
-              <tr>
-                <th class="px-3 py-4 text-left font-semibold text-gray-900 border-b border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-lg">
+            <thead>
+              <tr class="border-b border-gray-300">
+                <th class="px-3 py-4 text-left font-semibold text-gray-900">
                   {$text["pricing"]?.tableHeaders?.service || ""}
                 </th>
-                <th class="px-3 py-4 text-left font-semibold text-gray-900 border-b border-gray-200">
+                <th class="px-3 py-4 text-left font-semibold text-gray-900">
                   {$text["pricing"]?.tableHeaders?.quantity || ""}
                 </th>
-                <th class="px-3 py-4 text-left font-semibold text-gray-900 border-b border-gray-200">
+                <th class="px-3 py-4 text-left font-semibold text-gray-900">
                   {$text["pricing"]?.tableHeaders?.price || ""}
                 </th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody>
               {#each pricingData.services as service}
-                <tr class="hover:bg-gray-50 transition-colors duration-200">
+                <tr class="border-b border-gray-300">
                   <td class="px-3 py-4 text-gray-900">{service.name}</td>
                   <td class="px-3 py-4 text-gray-600">{service.quantity}</td>
                   <td class="px-3 py-4 font-medium" class:text-green-600={service.price === "Tasuta"} class:text-gray-900={service.price !== "Tasuta"}>

@@ -1,13 +1,30 @@
-- year: 2025 (talv, kevad)
+- year: 2025/2026
   members:
     - name: Christopher Rammul
       image: christopher_rammul
-
+    
     - name: Erki Lasberg
       image: erki_lasberg
 
+    - name: Kerdo Käärma
+      image: kerdo_kaarma
+
+    - name: Reio Opromei
+      image: reio_opromei
+
     - name: Rene Arumetsa
       image: rene_arumetsa
+
+- year: 2025 (talv, kevad)
+  members:
+    - name: Christopher Rammul
+      image: christopher_rammul_1
+
+    - name: Erki Lasberg
+      image: erki_lasberg_1
+
+    - name: Rene Arumetsa
+      image: rene_arumetsa_1
 
     - name: Hanno Vene
       image: hanno_vene2
@@ -19,13 +36,13 @@
       image: Eva-Marie_Alasi
 
     - name: Erki Lasberg
-      image: erki_lasberg
+      image: erki_lasberg_1
 
     - name: Rene Arumetsa
-      image: rene_arumetsa
+      image: rene_arumetsa_1
 
     - name: Christopher Rammul
-      image: christopher_rammul
+      image: christopher_rammul_1
 
     - name: Karina Reisel
       image: karina_reisel
@@ -364,5 +381,3 @@
 
   - name: Meelik Gornoi
     image: meelik_gornoi
-
-

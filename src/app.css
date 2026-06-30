@@ -34,7 +34,8 @@
     calc(4vw * var(--ui-scale)),
     calc(3rem * var(--ui-scale))
   );
-  --ui-scale: 1;
+  /* Continuous UI scale: 1.1 @ ≤2560px → 1.5 @ 3840px (4K) */
+  --ui-scale: calc(1.1 + 0.4 * clamp(0, (100vw - 2560px) / 1280px, 1));
 
   /* spacing scale */
   --spacing-0: 0px;
@@ -45,8 +46,16 @@
   --spacing-5: 32px;
   --spacing-6: 48px;
 
-  /* type scale (fluid base + modular sizes) */
-  --fs-base: clamp(1.1rem, 1vw + 1rem, 1.2rem);
+  /* fluid type scale — every size scales smoothly with viewport */
+  --fs-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --fs-sm: clamp(0.8rem, 0.75rem + 0.3vw, 0.95rem);
+  --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  --fs-lg: clamp(1.15rem, 1rem + 0.75vw, 1.5rem);
+  --fs-xl: clamp(1.3rem, 1.1rem + 1vw, 1.85rem);
+  --fs-2xl: clamp(1.6rem, 1.2rem + 1.5vw, 2.3rem);
+  --fs-3xl: clamp(1.9rem, 1.4rem + 2.5vw, 3rem);
+  --fs-4xl: clamp(2.25rem, 1.5rem + 3.5vw, 3.8rem);
+  --fs-display: clamp(2.75rem, 1.5rem + 5vw, 5rem);
   --line-height: 1.6;
 }
 
@@ -73,7 +82,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   transition: background-color 160ms ease, color 160ms ease;
   overflow-x: hidden;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
 }
 
 /* Basic link & button defaults that components inherit */
@@ -125,20 +134,6 @@ input[type="submit"] {
   }
   .desktop-only {
     display: block;
-  }
-}
-
-/* Increase overall UI scale on large 4K-class viewports */
-@media (min-width: 2400px), (min-width: 1900px) and (min-resolution: 2dppx) {
-  :root {
-    --ui-scale: 1.5;
-  }
-}
-
-/* Scale down UI for smaller screens */
-@media (max-width: 1280px) {
-  :root {
-    --ui-scale: 0.8;
   }
 }
 
